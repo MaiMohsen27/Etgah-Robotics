@@ -1,0 +1,25 @@
+[1.277s] Invoking command in '/root/workspaces/turtlebot_keyboard/src/turtlebot_controller': PYTHONPATH=/root/workspaces/turtlebot_keyboard/build/turtlebot_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/workspaces/turtlebot_keyboard/install/turtlebot_controller/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/turtlebot_controller build --build-base /root/workspaces/turtlebot_keyboard/build/turtlebot_controller/build install --record /root/workspaces/turtlebot_keyboard/build/turtlebot_controller/install.log --install-scripts $base/lib/turtlebot_controller --single-version-externally-managed install_data
+[1.601s] running egg_info
+[1.629s] writing ../../build/turtlebot_controller/turtlebot_controller.egg-info/PKG-INFO
+[1.651s] writing dependency_links to ../../build/turtlebot_controller/turtlebot_controller.egg-info/dependency_links.txt
+[1.668s] writing entry points to ../../build/turtlebot_controller/turtlebot_controller.egg-info/entry_points.txt
+[1.685s] writing requirements to ../../build/turtlebot_controller/turtlebot_controller.egg-info/requires.txt
+[1.701s] writing top-level names to ../../build/turtlebot_controller/turtlebot_controller.egg-info/top_level.txt
+[1.775s] reading manifest file '../../build/turtlebot_controller/turtlebot_controller.egg-info/SOURCES.txt'
+[1.788s] writing manifest file '../../build/turtlebot_controller/turtlebot_controller.egg-info/SOURCES.txt'
+[1.804s] running build
+[1.822s] running build_py
+[1.839s] copying turtlebot_controller/turtlebot_monitor.py -> /root/workspaces/turtlebot_keyboard/build/turtlebot_controller/build/lib/turtlebot_controller
+[1.856s] running install
+[1.874s] running install_lib
+[1.890s] copying /root/workspaces/turtlebot_keyboard/build/turtlebot_controller/build/lib/turtlebot_controller/turtlebot_monitor.py -> /root/workspaces/turtlebot_keyboard/install/turtlebot_controller/lib/python3.12/site-packages/turtlebot_controller
+[1.903s] byte-compiling /root/workspaces/turtlebot_keyboard/install/turtlebot_controller/lib/python3.12/site-packages/turtlebot_controller/turtlebot_monitor.py to turtlebot_monitor.cpython-312.pyc
+[1.922s] running install_data
+[1.922s] running install_egg_info
+[1.945s] removing '/root/workspaces/turtlebot_keyboard/install/turtlebot_controller/lib/python3.12/site-packages/turtlebot_controller-0.0.0-py3.12.egg-info' (and everything under it)
+[1.983s] Copying ../../build/turtlebot_controller/turtlebot_controller.egg-info to /root/workspaces/turtlebot_keyboard/install/turtlebot_controller/lib/python3.12/site-packages/turtlebot_controller-0.0.0-py3.12.egg-info
+[2.158s] running install_scripts
+[2.347s] Installing controller script to /root/workspaces/turtlebot_keyboard/install/turtlebot_controller/lib/turtlebot_controller
+[2.366s] Installing monitor script to /root/workspaces/turtlebot_keyboard/install/turtlebot_controller/lib/turtlebot_controller
+[2.381s] writing list of installed files to '/root/workspaces/turtlebot_keyboard/build/turtlebot_controller/install.log'
+[2.425s] Invoked command in '/root/workspaces/turtlebot_keyboard/src/turtlebot_controller' returned '0': PYTHONPATH=/root/workspaces/turtlebot_keyboard/build/turtlebot_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/workspaces/turtlebot_keyboard/install/turtlebot_controller/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/turtlebot_controller build --build-base /root/workspaces/turtlebot_keyboard/build/turtlebot_controller/build install --record /root/workspaces/turtlebot_keyboard/build/turtlebot_controller/install.log --install-scripts $base/lib/turtlebot_controller --single-version-externally-managed install_data
