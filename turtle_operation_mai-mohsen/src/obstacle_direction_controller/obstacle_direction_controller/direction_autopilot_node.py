@@ -1,17 +1,12 @@
 #!/usr/bin/env python3
 """
-direction_autopilot_node
-=========================
+direction_autopilot_node:
 
-Reads /scan (LaserScan) data from a TurtleBot3, drives it autonomously
-using a simple forward -> turn -> reverse state machine, and publishes
+Reads LaserScan data from a TurtleBot3, drives it autonomously and publishes
 velocity commands to /cmd_vel.
 
-It also exposes a /set_direction service (obstacle_interfaces/SetDirection)
-so an operator (a person on the terminal, or another node) can override
-the robot's current movement direction at any time. While an override is
-active, the autonomous state machine steps aside; once the override's
-hold time elapses, autonomous control resumes automatically.
+It also imports a /set_direction service so an operator can override
+the robot's current movement direction at any time. 
 """
 
 import math
