@@ -1,1 +1,112 @@
+# Autonomous Package Delivery
 
+The mission is executed across **three distinct phases**:
+1. **Phase 1 (Drive to Pickup):** Drives forward at the specified `speed` for `pickup_duration`. Progress scales from `0%` to `50%`.
+2. **Phase 2 (Package Pickup Simulation):** Stops the robot (`/cmd_vel = 0.0`) and simulates loading for the specified `pickup_duration`. Progress scales from `50%` to `100%`.
+3. **Phase 3 (Drive to Delivery):** Drives forward at `speed` for `delivery_duration` to complete delivery.
+
+
+A ROS 2 workspace with two packages that work together:
+
+| Package | Type |
+|---|---|
+| `delivery_mission_interfaces` | `ament_cmake` |
+| `delivery_mission_controller` | `ament_python` |
+
+## 1. Step-by-Step Setup Instructions
+
+1. **Create ROS 2 workspace**
+   ```bash
+   mkdir -p ~/ros2_ws/src
+   cd ~/ros2_ws/src
+   ```
+
+2. **Copy the two packages into the workspace's `src/` folder**
+   The paths should look like:
+   ```
+   ~/rps2_ws/src/delivery_mission_controller
+   ~/ros2_ws/src/delivery_mission_interfaces
+   ```
+
+3. **Build the packages**
+build the package inside the workspace folder
+   ```bash
+   cd ~/ros2_ws
+   colcon build 
+   ```
+
+4. **Source the workspace** (do this in every new terminal you open)
+   ```bash
+   source install/setup.bash
+   ````
+
+---
+
+## 2. Every ROS 2 Command Used (and what it does)
+
+| Command | What it does |
+|---|---|
+| `colcon build --packages-select <package name>` | Compiles/installs only this package (faster than rebuilding the whole workspace). |
+| `ros2 run delivery_mission_controller delivery_mission` | Runs the node. |
+| `ros2 action send_goal /delivery_mission delivery_mission_interfaces/action/DeliveryMission "{speed: <speed>, pickup_duration: <p-time>, delivery_duration: <d-time>, timeout: <timeout>}" --feedback` | starts the mission. |
+
+---
+
+## 3. How to Test Your Nodes
+
+1. **Turn on your simulation (I used Turtlebot3 - Burger model)**
+
+2. **Terminal 1: 
+   ```bash
+   source install/setup.bash
+   colcon build
+   ros2 run delivery_mission_controller delivery_mission
+   ```
+
+3. **Terminal 2: **Override the robot**
+   ```bash
+   source install/setup.bash
+   
+   ros2 action send_goal /delivery_mission delivery_mission_interfaces/action/DeliveryMission "{speed: 0.5, pickup_duration: 4.0,
+   delivery_duration: 5.0, timeout: 15.0}" --feedback
+
+   ros2 action send_goal /delivery_mission delivery_mission_interfaces/action/DeliveryMission "{speed: 0.5, pickup_duration: 6.0,
+   delivery_duration: 6.0, timeout: 8.0}" --feedback
+
+   ros2 action send_goal /delivery_mission delivery_mission_interfaces/action/DeliveryMission "{speed: 0.5, pickup_duration: 4.0,
+   delivery_duration: 5.0, timeout: 0.0}"
+
+   ```
+
+---
+
+## 4. Expected Output
+
+**In the first terminal**, you should see log lines like:
+```
+[INFO] [1787946346.510366972] [delivery_mission_server]: Delivery Mission Server Started
+[INFO] [1787946420.375054012] [delivery_mission_server]: GOAL ACCEPTED: speed=0.50 pickup_duration=4.00s delivery_duration=5.00s timeout=15.00s
+[INFO] [1787946420.377394313] [delivery_mission_server]: --- Phase 1: Driving to Pickup Location ---
+[INFO] [1787946424.391889414] [delivery_mission_server]: --- Phase 2: Simulating Package Pickup ---
+[INFO] [1787946427.403119448] [delivery_mission_server]: --- Phase 3: Driving to Delivery Location ---
+[INFO] [1787946432.420328123] [delivery_mission_server]: MISSION COMPLETED SUCCESSFULLY
+
+```
+
+**In the second terminal**, you should see log lines like:
+```
+Goal accepted with ID: 5cae647929114a8b9a89c7af2a222f91
+Feedback:
+    remaining_time: 3.058786392211914
+pickup_progress: 100.0
+
+Result:
+    success: true
+message: Delivery completed successfully in 12.04s
+
+Goal finished with status: SUCCEEDED
+```
+
+## 5. Demo of the Project
+
+https://youtu.be/eTDTzG5xUsE
