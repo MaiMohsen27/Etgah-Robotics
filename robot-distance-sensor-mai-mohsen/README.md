@@ -48,7 +48,7 @@ The robot can be handed a list of distance readings using its `action()` method,
 3. Open a terminal in the same folder as the file.
 4. Run:
    ```
-   python3 current_folder/robot.py
+   python3 robot.py
    ```
 5. The test code at the bottom of the file will run automatically and print the results for 5 test cases: 
 normal readings, numeric strings, invalid values, negative values, and boundary values (exactly 0.5m and 1m).
