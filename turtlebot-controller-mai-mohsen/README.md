@@ -67,13 +67,13 @@ build the package inside the workspace folder
 
 1. **Turn on your simulation (I used Turtlebot3 - Burger model)**
 
-2. **Terminal 1: Start the monitor node first** (so you can see messages as soon as they start)
+2. **Terminal 1: Start the controller node first** (so you can see messages as soon as they start)
    ```bash
    source install/setup.bash
    ros2 run turtlebot_controller controller
    ```
 
-3. **Terminal 2: Start the controller node**
+3. **Terminal 2: Start the monitor node**
    ```bash
    source install/setup.bash
    ros2 run turtlebot_controller monitor
