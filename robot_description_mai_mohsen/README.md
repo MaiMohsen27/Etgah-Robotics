@@ -28,7 +28,7 @@ base_footprint                (on the ground plane)
 ## Folder Structure
 
 ```
-robot_description_mai-mohsen/
+robot_description_mai_mohsen/
 ├── CMakeLists.txt
 ├── package.xml
 ├── README.md
