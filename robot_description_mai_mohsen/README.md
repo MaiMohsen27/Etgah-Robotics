@@ -28,14 +28,14 @@ base_footprint                (on the ground plane)
 ## Folder Structure
 
 ```
-robot_description_mai_mohsen/
+robot_description_mai-mohsen/
 ├── CMakeLists.txt
 ├── package.xml
 ├── README.md
 ├── urdf/
 │   ├── robot_description.urdf.xacro        
 ├── meshes/
-│   ├── lidar.stl                
+│   ├── lidar.STL                
 │   └── camera.stl                
 ```
 
@@ -45,17 +45,24 @@ robot_description_mai_mohsen/
 
 1. Place this package inside your ROS 2 workspace, e.g.
    `~/ros2_ws/src/robot_description`.
-2. Open the workspace folder in VS Code and make sure the **URDF
+2. build your workspace
+   `colcon build`.
+3. source the workspace
+   `source install/setup.bash`.
+4. Open the workspace folder in VS Code and make sure the **URDF
    Visualizer** extension is installed.
-3. Open `urdf/robot_description.urdf.xacro`.
-4. Run the command **"Preview URDF"** (Ctrl+Shift+P → *URDF Visualizer:
+5. Open `urdf/robot_description.urdf.xacro`.
+6. Run the command **"Preview URDF"** (Ctrl+Shift+P → *URDF Visualizer:
    Preview*) with this file active.
-5. Confirm every link appears, all joints connect correctly, and the
+7. Confirm every link appears, all joints connect correctly, and the
    LiDAR/camera meshes render in the right place.
 
 ## Screenshot
-<img width="855" height="360" alt="image" src="https://github.com/user-attachments/assets/72574d4c-a3a5-460e-bdd0-4463f8bd020d" />
+<img width="648" height="357" alt="image" src="https://github.com/user-attachments/assets/84c51bce-5d5c-4218-8089-c9428ed1dea4" />
 
+<img width="659" height="362" alt="image" src="https://github.com/user-attachments/assets/0ee32c41-45d8-4a1f-b102-f89d0293a57d" />
+
+<img width="652" height="362" alt="image" src="https://github.com/user-attachments/assets/9536e6e0-582f-45ba-a43b-d5273574352b" />
 
 ------
 **Author**: Mai Mohsen
