@@ -46,6 +46,7 @@ robot_description_mai-mohsen/
 1. Place this package inside your ROS 2 workspace, e.g.
    `~/ros2_ws/src/robot_description`.
 2. build your workspace
+   `cd ~/ros2_ws`
    `colcon build`.
 3. source the workspace
    `source install/setup.bash`.
