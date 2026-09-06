@@ -6,7 +6,7 @@ A ROS 2 package demonstrating SLAM-based mapping and localization using **slam_t
 
 ## Step-by-Step Setup Instructions
 
-1. make a ROS 2 workspace with a `src` file in it.
+1. **Create a ROS 2 workspace** with a `src` folder in it.
    ```bash
    mkdir -p ros2_ws/src
    ```
