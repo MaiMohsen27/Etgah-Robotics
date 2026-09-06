@@ -12,10 +12,10 @@ A ROS 2 package demonstrating SLAM-based mapping and localization using **slam_t
    ```
    
 2.  **Clone the repository** into your ROS 2 workspace `src` folder:
-   ```bash
-   cd ~/ros2_ws/src
-   git clone https://github.com/MaiMohsen27/slam_mapping_localization_mai_mohsen.git
-   ```
+    ```bash
+    cd ~/ros2_ws/src
+    git clone https://github.com/MaiMohsen27/slam_mapping_localization_mai_mohsen.git
+    ```
 
 3. **Build the package:**
    ```bash
