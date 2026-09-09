@@ -271,7 +271,125 @@ It should look the same as the following picture:
 
 ## Common Problems Faced and How They Were Solved
 
+- **No Map Appears in RViz**:
+  Check the map setting in RViz:
+  ```bash
+  Map Topic = /map
+  Durability Policy = Transient Local
+  ```
+  
+- **No Particle Cloud Appears**:
+  Check the Particle Cloud setting in RViz:
+  ```bash
+  Topic = /particle_cloud
+  Reliability Policy = Best Effort
+  ```
+  Don't forget to estimate an initial position using the 2D Pose Estimate tool.
+  
+- **Laser Scan Does Not Match the Map**:
+  Make sure the initial pose is right.
 
+- **AMCL Node Does Not Start**:
+  You probably forgot to source the workspace:
+  ```bash
+  source ~/workspaces/ros2_ws/install/setup.bash
+  ```
+---
+
+# Bonus: Spawning Turtlebot3 in a custom world
+
+## Overview
+
+This bonus task extends the project by spawning TurtleBot3 in a custom simulation world and completing a full mapping-and-localization pipeline on it.
+
+## Package Structure
+
+What your package should look like:
+
+```
+src/
+├── Images/
+├── slam_toolbox_demo/
+│   ├── config/
+│   │   ├── amcl.yaml
+│   │   ├── slam_toolbox_online_async.yaml
+│   │   └── turtlebot3_burger_bridge.yaml
+│   ├── include/
+│   ├── launch/
+│   │   ├── amcl.launch.py
+│   │   └── slam_toolbox_online_async.launch.py
+│   ├── map/
+│   │   ├── turtlebot3_world_map.pgm
+│   │   └── turtlebot3_world_map.yaml
+│   └── rviz/
+│       └── robot.rviz
+└── husarion_gz_spawn/
+    ├── config/
+    ├── env-hooks/
+    ├── launch/
+    │   ├── gz_sim.launch.py          # updated to load the custom world
+    │   └── spawn_turtlebot3.launch.py  # spawns TurtleBot3 (Open Robotics)
+    ├── maps/
+    ├── models/
+    ├── worlds/
+    │   ├── husarion_office.sdf       # base world, customized
+    ├── .gitignore
+    ├── .pre-commit-config.yaml
+    └── CHANGELOG.rst
+```
+## Build and Test Instructions
+
+1. **Create a ROS 2 workspace** with a `src` folder in it.
+   ```bash
+   mkdir -p ros2_ws/src
+   ```
+   
+2.  **Clone the repository** into your ROS 2 workspace `src` folder:
+    ```bash
+    cd ~/ros2_ws/src
+    git clone https://github.com/MaiMohsen27/amcl_localization_mai_mohsen.git
+    ```
+3.  **Clone the repository** [husarion_gz_worlds](https://github.com/husarion/husarion_gz_worlds) into your ROS 2 workspace `src` folder:
+    ```bash
+    cd ~/ros2_ws/src
+    git clone [https://github.com/MaiMohsen27/amcl_localization_mai_mohsen.git](https://github.com/husarion/husarion_gz_worlds)
+    ```
+4. **Use the ``bonus_custom_world`` folder** and modify the workspace packages according to the package structure.
+
+5. **Build the package:**
+   ```bash
+   cd ~/ros2_ws
+   colcon build --packages-select robot_localization
+   source install/setup.bash
+   ```
+
+6. **Launch the world and Spawn the TurtleBot3 Burger:** 
+   ```bash
+   ros2 launch husarion_gz_worlds gz_sim.launch.py
+   ```
+   <img width="1920" height="841" alt="image" src="https://github.com/user-attachments/assets/6550739b-8476-421a-9923-bb2c8866a54b" />
+
+   <img width="1829" height="754" alt="image" src="https://github.com/user-attachments/assets/0f1bfdc4-e10f-40eb-868d-82da95bde787" />
+
+7. **For Mapping, Launch:**
+   ```bash
+   ros2 launch slam_toolbox_demo slam_toolbox_online_async.launch.py
+   ```
+   Refer to the rviz/robot.rviz for RViz2 configurations and for testing steps.
+   [Demo](https://github.com/MaiMohsen27/Etgah-Robotics/blob/main/amcl_localization_mai_mohsen/bonus_custom_world/src/Images/mapping.mp4)
+
+   <img width="1917" height="840" alt="image" src="https://github.com/user-attachments/assets/139f6003-b258-419f-a529-11b11b5df385" />
+
+8. **For Localization, Launch:**
+   ```bash
+   ros2 launch slam_toolbox_demo amcl.launch.py
+   ```
+   Refer to RViz Configuration and Testing sections in this README.
+   [Demo](https://github.com/MaiMohsen27/Etgah-Robotics/blob/main/amcl_localization_mai_mohsen/bonus_custom_world/src/Images/localization.mp4)
+---
+## TF Tree
+
+<img width="868" height="513" alt="image" src="https://github.com/user-attachments/assets/53426064-86da-4848-bb83-81094b48b953" />
 
 ---
 
