@@ -363,7 +363,14 @@ src/
    source install/setup.bash
    ```
 
-6. **Launch the world and Spawn the TurtleBot3 Burger:** 
+6. **Launch the world and Spawn the TurtleBot3 Burger:**
+    Set the TurtleBot3 model (add to `~/.bashrc` if needed):
+   
+   ```bash
+   export TURTLEBOT3_MODEL=burger
+   ```
+
+   Then launch the world (with the TurtleBot3 included)
    ```bash
    ros2 launch husarion_gz_worlds gz_sim.launch.py
    ```
@@ -371,7 +378,7 @@ src/
 
    <img width="1829" height="754" alt="image" src="https://github.com/user-attachments/assets/0f1bfdc4-e10f-40eb-868d-82da95bde787" />
 
-7. **For Mapping, Launch:**
+8. **For Mapping, Launch:**
    ```bash
    ros2 launch slam_toolbox_demo slam_toolbox_online_async.launch.py
    ```
