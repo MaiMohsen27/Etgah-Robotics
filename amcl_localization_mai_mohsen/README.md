@@ -337,7 +337,7 @@ src/
     ├── .pre-commit-config.yaml
     └── CHANGELOG.rst
 ```
-## Build and Test Instructions
+## Build and Test Instructions on ETGAH
 
 1. **Create a ROS 2 workspace** with a `src` folder in it.
    ```bash
