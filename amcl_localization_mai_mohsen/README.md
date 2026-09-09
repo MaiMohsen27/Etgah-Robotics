@@ -375,12 +375,14 @@ src/
    ```bash
    ros2 launch slam_toolbox_demo slam_toolbox_online_async.launch.py
    ```
-   Refer to the rviz/robot.rviz for RViz2 configurations and for testing steps, refer to [this](https://github.com/MaiMohsen27/Etgah-Robotics/tree/main/slam_mapping_localization_mai_mohsen)
-   [Demo](https://github.com/MaiMohsen27/Etgah-Robotics/blob/main/amcl_localization_mai_mohsen/bonus_custom_world/src/Images/mapping.mp4)
+   Refer to the rviz/robot.rviz for RViz2 configurations and for testing steps, refer to [this](https://github.com/MaiMohsen27/Etgah-Robotics/tree/main/slam_mapping_localization_mai_mohsen).
+
+
+   [Demo](https://github.com/MaiMohsen27/Etgah-Robotics/blob/main/amcl_localization_mai_mohsen/bonus_custom_world/src/Images/mapping.mp4).
 
    <img width="1917" height="840" alt="image" src="https://github.com/user-attachments/assets/139f6003-b258-419f-a529-11b11b5df385" />
 
-8. **For Localization, Launch:**
+9. **For Localization, Launch:**
    ```bash
    ros2 launch slam_toolbox_demo amcl.launch.py
    ```
