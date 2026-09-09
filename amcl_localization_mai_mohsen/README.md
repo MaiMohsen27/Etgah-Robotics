@@ -352,7 +352,7 @@ src/
 3.  **Clone the repository** [husarion_gz_worlds](https://github.com/husarion/husarion_gz_worlds) into your ROS 2 workspace `src` folder:
     ```bash
     cd ~/ros2_ws/src
-    git clone [https://github.com/MaiMohsen27/amcl_localization_mai_mohsen.git](https://github.com/husarion/husarion_gz_worlds)
+    git clone https://github.com/husarion/husarion_gz_worlds
     ```
 4. **Use the ``bonus_custom_world`` folder** and modify the workspace packages according to the package structure.
 
