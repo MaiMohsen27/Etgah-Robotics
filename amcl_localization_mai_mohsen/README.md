@@ -300,7 +300,7 @@ It should look the same as the following picture:
 
 ## Overview
 
-This bonus task extends the project by spawning TurtleBot3 in a custom simulation world and completing a full mapping-and-localization pipeline on it.
+This bonus task extends the project by spawning TurtleBot3 in a custom simulation world and completing a full mapping-and-localization pipeline on it. 
 
 ## Package Structure
 
@@ -311,28 +311,28 @@ src/
 ├── Images/
 ├── slam_toolbox_demo/
 │   ├── config/
-│   │   ├── amcl.yaml
-│   │   ├── slam_toolbox_online_async.yaml
-│   │   └── turtlebot3_burger_bridge.yaml
+│   │   ├── amcl.yaml     #for localization
+│   │   ├── slam_toolbox_online_async.yaml     #for mapping
+│   │   └── turtlebot3_burger_bridge.yaml 
 │   ├── include/
 │   ├── launch/
-│   │   ├── amcl.launch.py
-│   │   └── slam_toolbox_online_async.launch.py
+│   │   ├── amcl.launch.py     #for localization
+│   │   └── slam_toolbox_online_async.launch.py     #for mapping
 │   ├── map/
 │   │   ├── turtlebot3_world_map.pgm
 │   │   └── turtlebot3_world_map.yaml
 │   └── rviz/
-│       └── robot.rviz
+│       └── robot.rviz     #to access mapping configurations
 └── husarion_gz_spawn/
     ├── config/
     ├── env-hooks/
     ├── launch/
-    │   ├── gz_sim.launch.py          # updated to load the custom world
-    │   └── spawn_turtlebot3.launch.py  # spawns TurtleBot3 (Open Robotics)
+    │   ├── gz_sim.launch.py          # updated to load the custom world and to spawn TurtleBot3 as well
+    │   └── spawn_turtlebot3.launch.py  # to spawn TurtleBot3 (Open Robotics)
     ├── maps/
     ├── models/
     ├── worlds/
-    │   ├── husarion_office.sdf       # base world, customized
+    │   ├── husarion_office.sdf       # base world, customized based on my preference
     ├── .gitignore
     ├── .pre-commit-config.yaml
     └── CHANGELOG.rst
