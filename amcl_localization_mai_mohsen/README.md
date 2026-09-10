@@ -85,7 +85,7 @@ amcl_localization_mai_mohsen/
    In a second terminal:
    ```bash
    source ~/ros2_ws/install/setup.bash
-   ros2 launch robot_navigation amcl.launch.py
+   ros2 launch robot_localization amcl.launch.py
    ```
 3. **Launch RViz:**
    In a third terminal:
